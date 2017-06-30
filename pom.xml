@@ -153,12 +153,12 @@
     <module>jstorm-ui</module>
     <!--<module>jstorm-utility/jstorm-rocket-mq</module>-->
     <module>jstorm-utility/jstorm-kafka</module>
-    <module>jstorm-utility/ons</module>
+    <!--<module>jstorm-utility/ons</module>
     <module>jstorm-utility/jstorm-flux</module>
     <module>jstorm-utility/jstorm-elasticsearch</module>
     <module>jstorm-on-yarn</module>
     <module>jstorm-hbase-metrics-plugin</module>
-    <module>jstorm-hdfs</module>
+    <module>jstorm-hdfs</module>-->
   </modules>
 
   <profiles>
@@ -270,6 +270,10 @@
 
   <repositories>
     <repository>
+      <id>central</id>
+      <url>http://repo1.maven.org/maven2</url>
+    </repository>
+    <repository>
       <id>nexus</id>
       <name>local private nexus</name>
       <url>http://maven.oschina.net/content/groups/public/</url>
@@ -287,10 +291,6 @@
     <repository>
       <id>twitter4j</id>
       <url>http://twitter4j.org/maven2</url>
-    </repository>
-    <repository>
-      <id>central</id>
-      <url>http://repo1.maven.org/maven2</url>
     </repository>
     <repository>
       <id>clojars</id>

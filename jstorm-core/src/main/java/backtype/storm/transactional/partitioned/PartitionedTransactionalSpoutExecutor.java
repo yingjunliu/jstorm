@@ -29,7 +29,7 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PartitionedTransactionalSpoutExecutor implements ITransactionalSpout<Integer> {
+public class PartitionedTransactionalSpoutExecutor implements ITransactionalSpout<Object> {
     IPartitionedTransactionalSpout _spout;
 
     public PartitionedTransactionalSpoutExecutor(IPartitionedTransactionalSpout spout) {
@@ -40,7 +40,7 @@ public class PartitionedTransactionalSpoutExecutor implements ITransactionalSpou
         return _spout;
     }
 
-    class Coordinator implements ITransactionalSpout.Coordinator<Integer> {
+    class Coordinator implements ITransactionalSpout.Coordinator<Object> {
         private IPartitionedTransactionalSpout.Coordinator _coordinator;
 
         public Coordinator(Map conf, TopologyContext context) {
@@ -48,7 +48,7 @@ public class PartitionedTransactionalSpoutExecutor implements ITransactionalSpou
         }
 
         @Override
-        public Integer initializeTransaction(BigInteger txid, Integer prevMetadata) {
+        public Object initializeTransaction(BigInteger txid, Object prevMetadata) {
             return _coordinator.numPartitions();
         }
 
